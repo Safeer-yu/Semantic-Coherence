@@ -1,0 +1,13 @@
+farasapy==0.1.1
+gensim==4.4.0
+requests==2.32.5
+openxlab==0.0.1
+python-dotenv==1.2.1
+PyArabic==0.6.15
+pandas==2.3.3
+scikit-learn==1.7.2
+python-bidi==0.6.7
+arabic-reshaper==3.0.0
+matplotlib==3.10.8
+seaborn==0.13.2
+mwparserfromhell==0.7.2
