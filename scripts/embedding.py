@@ -39,7 +39,7 @@ def read_and_preprocess_corpus(file_path, stopwords, chunk_size=10000):
             yield tokens
 
 if __name__ == "__main__":
-    corpus_file_path = 'arabic_corpus.txt'
+    corpus_file_path = '/home/safeer.alyubary/embedding_4/arabic_corpus.txt'
     stopwords_file_path = 'arabic_stopwords_nltk.txt'
 
     stopwords = load_stopwords(stopwords_file_path)
@@ -55,5 +55,5 @@ if __name__ == "__main__":
     model.train(tokenized_corpus, total_examples=model.corpus_count, epochs=5)
 
     # Save the model
-    model.save("main_corpus_word2vec.model")
+    model.save("data_files/models/main_corpus_word2vec.model")
     print("Model saved as main_corpus_word2vec.model")
