@@ -1,6 +1,7 @@
 data/
-lgos/
+logs/
 jobs/
+data_files/
 # Python caches
 __pycache__/
 *.py[cod]
