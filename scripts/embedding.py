@@ -48,11 +48,7 @@ if __name__ == "__main__":
     tokenized_corpus = list(read_and_preprocess_corpus(corpus_file_path, stopwords))
 
     # Initialize and train the Word2Vec model
-    model = Word2Vec(vector_size=100, window=5, min_count=5, sg=1, workers=36)
-    model.build_vocab(tokenized_corpus)
-
-    # Train the Word2Vec model
-    model.train(tokenized_corpus, total_examples=model.corpus_count, epochs=5)
+    model = Word2Vec(sentences=tokenized_corpus, vector_size=100, window=5, min_count=5, sg=1, workers=36) 
 
     # Save the model
     model.save("data_files/models/main_corpus_word2vec.model")

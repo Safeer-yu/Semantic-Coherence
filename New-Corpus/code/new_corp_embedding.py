@@ -28,7 +28,7 @@ def preprocess_text(text, stopwords):
     
     # Tokenize and strip tashkeel simultaneously
     tokens = tokenize(arabic_only_text, conditions=is_arabicrange, morphs=strip_tashkeel)
-    tokens = [token for token in tokens if token not in stopwords and len(token)>1]  # Remove stopwords
+    tokens = [token for token in tokens if token not in stopwords]  # Remove stopwords
   
     return tokens
 
@@ -61,24 +61,7 @@ print("Loading stopwords and preparing corpus...")
 stop_words = load_stopwords(stopwords_file_path)
 sentences = MyCorpus(files_path, stop_words)
 
-print("Training Word2Vec model (Skip-gram)...")
-model = Word2Vec(
-    vector_size=100, 
-    window=5, 
-    min_count=5, 
-    sg=1, 
-    workers=36
-)
-
-# Build vocabulary from the generator
-model.build_vocab(sentences)
-
-# Train the model
-model.train(
-    sentences, 
-    total_examples=model.corpus_count, 
-    epochs=5
-)
+model = Word2Vec(sentences=sentences, vector_size=100, window=5, min_count=5, sg=1, workers=36)
 
 model.save(model_save_path)
 print(f"Success! Model saved to {model_save_path}")
