@@ -31,7 +31,7 @@ def process_wikipedia_dump(dump_file_path, output_file_path):
         with open(output_file_path, "w", encoding="utf-8") as output:
             for i, (title, content, pageid) in enumerate(pages):
                 
-                # 1. Filter out Redirects (English and Arabic)
+                # Filter out Redirects (English and Arabic)
     
                 content_start = content.strip().lower()
                 if content_start.startswith("#redirect") or content_start.startswith("#تحويل"):
@@ -60,7 +60,6 @@ def process_wikipedia_dump(dump_file_path, output_file_path):
 if __name__ == "__main__":
     base_dir = os.getcwd() 
     dump_path = download_arabic_wiki_dump()
-    # Ensure the output directory exists
     os.makedirs("data_files/wiki_articles", exist_ok=True)
     output_path = os.path.join(base_dir, "data_files/wiki_articles/wiki_corpus.jsonl")
     

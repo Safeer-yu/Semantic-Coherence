@@ -9,7 +9,7 @@ and used to update the main dictionary by grouping words under their shared root
 
 import pickle
 from collections import defaultdict
-import pandas as pd  # Import pandas to work with Excel files
+import pandas as pd  
 
 def load_word_to_root(file_path):
     """

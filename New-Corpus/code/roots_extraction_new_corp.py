@@ -8,10 +8,8 @@ import pyarabic.araby as araby
 from pyarabic.araby import tokenize, is_arabicrange, strip_tashkeel
 
 # Initialize Farasa
-# Note: Ensure you have the Farasa jar files or the library correctly configured
 farasa_stemmer = FarasaStemmer(interactive=True)
 
-# Configuration
 files_path = "data_files/data"
 stopwords_file_path = 'arabic_stopwords_nltk.txt'
 output_pickle_path = "New-Corpus/output/new_corpus_root_to_words_dict.pkl"

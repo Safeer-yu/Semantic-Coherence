@@ -9,7 +9,7 @@ and used to update the main dictionary by grouping words under their shared root
 
 import pickle
 from collections import defaultdict
-import pandas as pd  # Import pandas to work with Excel files
+import pandas as pd  
 
 def load_word_to_root(file_path):
     """
@@ -45,7 +45,7 @@ def update_stem_to_words_with_roots(stem_to_words, word_to_root):
 
 def main():
     # Load the stem to words dictionary
-    stem_to_words_path = "data_files/main_corpus_root_to_words_dict.pkl"
+    stem_to_words_path = "New-Corpus/output/new_corpus_root_to_words_dict.pkl"
     with open(stem_to_words_path, "rb") as file:
         stem_to_words = pickle.load(file)
 
@@ -57,7 +57,7 @@ def main():
     root_to_words = update_stem_to_words_with_roots(stem_to_words, word_to_root)
 
     # Save the updated dictionary
-    updated_dict_path = "data_files/updated_main_corpus_root_to_words_dict.pkl"
+    updated_dict_path = "New-Corpus/output/updated_new_corpus_root_to_words_dict.pkl"
     with open(updated_dict_path, "wb") as file:
         pickle.dump(root_to_words, file)
 
