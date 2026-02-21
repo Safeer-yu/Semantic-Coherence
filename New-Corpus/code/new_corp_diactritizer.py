@@ -10,6 +10,8 @@ import json
 import re
 from farasa.diacratizer import FarasaDiacritizer
 from pyarabic.araby import is_arabicrange
+import sys
+
 
 def smart_clean(text):
    
@@ -51,7 +53,7 @@ def process_corpus(input_file, output_file):
                     diacritized_out = " ".join(diacritized_parts)
                 
                 output_data = {
-                    "ID": data.get("ID"),
+                    "ID": data.get("ID") or data.get("id") or "",
                     "diacritized_text": diacritized_out
                 }
                 
@@ -60,12 +62,13 @@ def process_corpus(input_file, output_file):
                 if i % 100 == 0:
                     print(f"Processed {i} lines...")
                     outfile.flush()
+                    sys.stdout.flush()
 
             except Exception as e:
                 print(f"Error on line {i}: {e}")
 
 if __name__ == "__main__":
-    INPUT_FILE = '/home/safeer.alyubary/Semantic-Coherence/data_files/data/Sabanews.jsonl'
-    OUTPUT_FILE = '/home/safeer.alyubary/Semantic-Coherence/New-Corpus/output/diacritized_Sabanews.jsonl'
+    INPUT_FILE = 'data_files/data/Almustaqbal.jsonl'
+    OUTPUT_FILE = 'data_files/diacritized_new_corpus/diacritized_Almustaqbal.jsonl'
     process_corpus(INPUT_FILE, OUTPUT_FILE)
     print("Done!")
