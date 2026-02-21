@@ -49,7 +49,7 @@ def main():
     with open(stem_to_words_path, "rb") as file:
         stem_to_words = pickle.load(file)
 
-    # Load the word to root dictionary from an Excel file
+    # Load the word to root dictionary from the Excel file
     word_to_root_path = "word_root_dictionary_Arabic.xlsx" 
     word_to_root = load_word_to_root(word_to_root_path)
 
