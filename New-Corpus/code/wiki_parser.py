@@ -8,7 +8,7 @@ import bz2
 
 """
 we chose mwparserfromhell over WikiCorpus (from gensim)
-mwparserfromhell works directly on the raw UTF-8 wikitext and doesn’t try to "clean" or "normalize" your text, 
+mwparserfromhell works directly on the raw UTF-8 wikitext and doesn’t try to clean or normalize the text, 
 while WikiCorpus does a bunch of cleaning steps that can unintentionally mess with Arabic. 
 
 """
