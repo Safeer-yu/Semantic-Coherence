@@ -5,6 +5,14 @@ import mwparserfromhell
 from gensim.corpora.wikicorpus import extract_pages
 import bz2
 
+
+"""
+we chose mwparserfromhell over WikiCorpus (from gensim)
+mwparserfromhell works directly on the raw UTF-8 wikitext and doesn’t try to "clean" or "normalize" your text, 
+while WikiCorpus does a bunch of cleaning steps that can unintentionally mess with Arabic. 
+
+"""
+
 def download_arabic_wiki_dump():
     url = "https://dumps.wikimedia.org/arwiki/latest/arwiki-latest-pages-articles.xml.bz2"
     save_dir = "data_files/wiki_articles"
@@ -55,12 +63,12 @@ def process_wikipedia_dump(dump_file_path, output_file_path):
                 if i > 0 and i % 5000 == 0:
                     print(f"Processed {i} articles...")
 
-    print("Processing complete!")
+    
 
 if __name__ == "__main__":
     base_dir = os.getcwd() 
     dump_path = download_arabic_wiki_dump()
     os.makedirs("data_files/wiki_articles", exist_ok=True)
-    output_path = os.path.join(base_dir, "data_files/wiki_articles/wiki_corpus.jsonl")
+    output_path = os.path.join(base_dir, "data_files/data/wiki_corpus.jsonl")
     
     process_wikipedia_dump(dump_path, output_path)
