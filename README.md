@@ -3,10 +3,10 @@
 This project investigates:
 
 - The semantic coherence of Arabic morphological root families
-- The effect of diacritization on embedding performance
+- The effect of diacritization on embedding performance and semantic coherence
 
 The work began with an existing large Arabic corpus (~1.9B words).
-During experimentation, a better-structured corpus was identified and adopted after it demonstrated superior embedding performance.
+During experimentation, a cleaner and better-structured corpus was identified and adopted after it demonstrated superior embedding performance.
 
 ## Installation
 ```bash
@@ -27,13 +27,13 @@ All large-scale experiments were conducted on the UAEU High Performance Computin
 The project uses an [Arabic text corpus](https://github.com/tarekeldeeb/arabic_corpus?tab=readme-ov-file) which consists of 1.9 billion words
 
 - **New Corpus (Recommended)**  
-  More structured Arabic corpus totaling approximately 1.9 billion words.  
+  Cleaner and better structured (several json files) Arabic corpus totaling approximately 1.9 billion words.  
   This dataset combines:
   - A [1.5 B-word structured Arabic corpus](https://opendatalab.com/OpenDataLab/arabic_billion_words/cli/main)  
   - The complete Arabic Wikipedia dump (~0.4 billion words)
   
 After training embeddings on this corpus, similarity evaluations showed significantly improved performance.
-As a result, this corpus is recommended for embedding-based experiments.
+As a result, this corpus is recommended for further experiments.
 
 ## Pipeline
 The following pipeline was applied to the Original Corpus, and partially repeated on the New Corpus.
@@ -53,8 +53,7 @@ stem → words
 
 #### 2.2 Improved Root Mapping
 Because stems do not always correspond to true linguistic roots:
-- Use an external word–root dictionary (word_root_dictionary_Arabic.xlsx).
-- Complete missing mappings using Araflex
+- Use an external word–root dictionary (word_root_dictionary_Arabic.xlsx) that was built with the help of Araflex.
 - Merge stems sharing the same root.
 - Produce: root → words
 Saved as:
