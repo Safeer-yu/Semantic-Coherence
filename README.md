@@ -9,9 +9,17 @@ The work began with an existing large Arabic corpus (~1.9B words).
 During experimentation, a cleaner and better-structured corpus was identified and adopted after it demonstrated superior embedding performance.
 
 ## Installation
+### Install required packages
+
 ```bash
 pip install -r requirements.txt
 ```
+### Copy the template file to create your own .env file
+
+```bash
+cp .env.example .env
+```
+
 
 ## Activate environment
 ```bash 
@@ -29,7 +37,7 @@ The project uses an [Arabic text corpus](https://github.com/tarekeldeeb/arabic_c
 - **New Corpus (Recommended)**  
   Cleaner and better structured (several json files) Arabic corpus totaling approximately 1.9 billion words.  
   This dataset combines:
-  - A [1.5 B-word structured Arabic corpus](https://opendatalab.com/OpenDataLab/arabic_billion_words/cli/main)  
+  - A [1.5 B-word structured Arabic corpus](https://opendatalab.com/OpenDataLab/arabic_billion_words/cli/main) available from OpenDataLab.
   - The complete Arabic Wikipedia dump (~0.4 billion words)
   
 After training embeddings on this corpus, similarity evaluations showed significantly improved performance.
