@@ -15,7 +15,7 @@ files = [
     "SaudiYoum.jsonl",
     "Techreen.jsonl"
 ]
-
+# Set your OpenXLab credentials as environment variables before running this script
 OPENXLAB_AK = os.getenv("OPENXLAB_AK")
 OPENXLAB_SK = os.getenv("OPENXLAB_SK")
 
