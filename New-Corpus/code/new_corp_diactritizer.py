@@ -68,7 +68,7 @@ def process_corpus(input_file, output_file):
                 print(f"Error on line {i}: {e}")
 
 if __name__ == "__main__":
-    INPUT_FILE = 'data_files/data/Almustaqbal.jsonl'
-    OUTPUT_FILE = 'data_files/diacritized_new_corpus/diacritized_Almustaqbal.jsonl'
+    INPUT_FILE = 'data_files/data/Ryiadh.jsonl'
+    OUTPUT_FILE = 'data_files/diacritized_new_corpus/diacritized_Ryiadh.jsonl'
     process_corpus(INPUT_FILE, OUTPUT_FILE)
     print("Done!")
