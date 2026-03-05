@@ -11,6 +11,9 @@ we chose mwparserfromhell over WikiCorpus (from gensim)
 mwparserfromhell works directly on the raw UTF-8 wikitext and doesn’t try to clean or normalize the text, 
 while WikiCorpus does a bunch of cleaning steps that can unintentionally mess with Arabic. 
 
+
+This is still not the best parser as it leaves table cells merged and leaves many wiki artifacts. 
+
 """
 
 def download_arabic_wiki_dump():
