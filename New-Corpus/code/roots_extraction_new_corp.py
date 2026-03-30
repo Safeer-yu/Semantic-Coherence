@@ -16,7 +16,7 @@ stopwords_file_path = 'arabic_stopwords_nltk.txt'
 # output_pickle_path = "New-Corpus/output/new_corpus_root_to_words_dict.pkl"
 
 files_path = "data_files/one_file" # one file for test
-output_pickle_path = "New-Corpus/output/one_file_root_to_words_dict.pkl"  
+output_pickle_path = "New-Corpus/output/wiki_root_to_words_dict.pkl"  
 
 
 def load_stopwords(file_path):
