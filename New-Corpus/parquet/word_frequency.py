@@ -10,9 +10,9 @@ import pyarrow.parquet as pq
 
 files_path = "data_files/wiki_and_parquet"
 stopwords_file_path = "arabic_stopwords_nltk.txt"
-output_file_path = "data_files/word_frequencies_3.txt"
-stats_file_path = "data_files/word_stats_3.txt"
-low_freq_words_file_path = "data_files/words_10_or_less.txt"
+output_file_path = "data_files/data_stats/word_frequencies_main.txt"
+stats_file_path = "data_files/data_stats/word_stats_main.txt"
+low_freq_words_file_path = "data_files/data_stats/words_10_or_less_main.txt"
 
 def load_stopwords(file_path):
     with open(file_path, "r", encoding="utf-8") as f:
@@ -30,7 +30,7 @@ def preprocess_text(text, stopwords):
     text = re.sub(r'[٠-٩]', ' ', text)
     # Tokenize and strip tashkeel
     tokens = tokenize(text, conditions=is_arabicrange, morphs=strip_tashkeel)
-    tokens = [token for token in tokens if token not in stopwords]
+    tokens = [token for token in tokens if token not in stopwords and len(token) > 1]
     return tokens
 
 counter = Counter()
