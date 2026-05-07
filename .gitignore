@@ -14,3 +14,5 @@ env/
 .env
 
 .ipynb_checkpoints/
+diacritization/diacritized_new_corpus/
+src/output/
