@@ -75,7 +75,7 @@ def update_stem_to_words_with_roots(stem_to_words, word_to_root):
 
 def main():
     # Load the stem to words dictionary
-    stem_to_words_path = "New-Corpus/parquet/output/stem_to_words_dict.pkl"
+    stem_to_words_path = "src/output/stem_to_words_dict.pkl"
     with open(stem_to_words_path, "rb") as file:
         stem_to_words = pickle.load(file)
 
@@ -87,7 +87,7 @@ def main():
     root_to_words = update_stem_to_words_with_roots(stem_to_words, word_to_root)
 
     # Save the updated dictionary
-    updated_dict_path = "src/output/root_to_words_dict.pkl"
+    updated_dict_path = "src/output/root_to_words_dict_v3.pkl"
     with open(updated_dict_path, "wb") as file:
         pickle.dump(root_to_words, file)
 
